@@ -1,0 +1,113 @@
+.StripeElement {
+  box-sizing: border-box;
+
+  height: 40px;
+
+  padding: 10px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+#card-element {
+  width: 700px;
+  margin-left: 300px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+#wrap {
+  margin: 0px auto;
+  background-color: white;
+  width: 950px;
+  font-family: sans-serif;
+  padding: 25px;
+}
+
+.form-box {
+  display: inline-block;
+  background-color: white;
+  width: 400px;
+  min-height: 500px;
+  padding: 25px;
+  vertical-align: top;
+  margin: 10px;
+}
+
+.form-box form {
+  margin: 25px;
+}
+
+.form-box input {
+  display: block;
+  margin: 10px;
+}
+
+#errors {
+  text-align: center;
+  color: red;
+  background-color: black;
+  padding: 20px;
+  height: 150px;
+  font-weight: bold;
+}
+.wrap {
+  margin: 0px auto;
+}
+.header {
+  display: inline-flex;
+}
+.welcome {
+  margin-right: 700px;
+  display: inline-block;
+  width: 500px;
+}
+.quotes {
+  margin-left: 100px;
+  display: inline-block;
+}
+.add {
+  text-align: right;
+  margin-left: 100px;
+}
+.write {
+  text-align: right;
+  display: inline-flex;
+}
+p {
+  margin-left: 20px;
+}
+.log_out {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.sub {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.del {
+  margin-left: 150px;
+}
+.cc-charge {
+  margin-left: 600px;
+  margin-top: 30px;
+}

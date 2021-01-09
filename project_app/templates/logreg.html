@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log and Reg</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log and Reg</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style_2.css' %}">
+</head>
+
+<body style="background-color: black;">
+    <a href="/" style="color: #cd5601;">Back Home</a>
+    <h1 style="margin-left: 200px; margin-bottom: -20px; margin-top: 60px; color: #cd5601;">Thank you so much for joining us!
+        <br>
+        <br>
+        We look forward to assist you to achieve your improvement goals!</h1>
+    <div id='wrap'>
+        {% if messages %}
+            <div id='errors'>
+                {% for message in messages %}
+                    <p>- {{message}} -</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class='form-box'>
+            <h1>Register:</h1>
+            <form action="/create_user" method=POST>
+                {% csrf_token %}
+                First Name: <input type="text" name='f_n'>
+                Last Name: <input type="text" name='l_n'>
+                Email: <input type="text" name='email'>
+                Password: <input type="password" name='pw'>
+                Confirm PW: <input type="password" name='conf_pw'>
+                <input type="submit" value='Create User'>
+            </form>
+        </div>
+
+        <div class='form-box'>
+            <h1>Login:</h1>
+            <form action="/log_in" method=POST>
+                {% csrf_token %}
+                Email: <input type="text" name='email'>
+                Password: <input type="password" name='pw'>
+                <input type="submit" value='Login'>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

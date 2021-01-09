@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style_3.css' %}">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body style="background-color: black; color: #cd5601; font-size: 20px; margin-top: 50px;">
+    <p style="margin-left: 340px; font-size: 20px;">Thank you for trusting us! Your card will be charged <span style="color: turquoise;text-decoration: underline;">$15</span> for video analysis!</p>
+    <form class="cc-charge" action="/charge" method="POST">
+      {% csrf_token %}
+      <script src="https://checkout.stripe.com/checkout.js"
+      class="stripe-button"
+      data-key="{{ data_key }}"
+      data-amount="{{ stripe_total }}"
+      data-name="Elite Performance Tennis Academy USA"
+      data-description="{{description}}"
+      data-locale="auto"
+      data-currency="usd"
+      data-shipping-address="true"
+      data-billing-address="true"
+      data-zip-code="true">
+      </script>
+  </form>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Coaching</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style_2.css' %}">
+</head>
+<body style="background-color: black; color: #cd5601;">
+    <a href="/" style="color: #cd5601; font-size: 20px;">Back Home</a>
+    <h1 style="margin-left: 400px;">Welcome to our Virtual Coaching section!</h1>
+    <p style="font-size: 20px; width: 800px; margin-left: 300px; text-align: justify;">As you can see in the examples below, you will be able to send a video of your forehand, backhand, or any part of your technique that might require adjustments, I will analyze it and send it back to you with an analysis of how your technique can improve and also and improvement plan with steps to follow to fix it, all of that for a small fee. Click here to <a href="/purchase" style="color: turquoise; text-decoration: underline; font-weight: bold;">Purchase.</a>
+    <br>
+    <br>Here are some examples:</p>
+    <br>
+    <br>
+    <div class="zoe">
+        <h1 style="margin-left: 70px;">Technical analysis for Zoe's forehand</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'zoe.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="sydney">
+        <h1 style="margin-left: 70px;">Technical analysis for Sydney's Serve</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'sydney.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="veorah">
+        <h1 style="margin-left: 50px;">Technical analysis for Veorah's forehand</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'veorah.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="priscilla">
+        <h1 style="margin-left: 40px;">Technical analysis for Priscilla's backhand</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'priscilla.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="claire">
+        <h1 style="margin-left: 60px;">Technical analysis for Claire's serve</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'claire.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="ashley">
+        <h1 style="margin-left: 60px;">Technical analysis for Ashley's serve</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'ashley.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+</body>
+</html>

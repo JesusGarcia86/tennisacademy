@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Coaching</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style_2.css' %}">
+</head>
+<body style="background-color: black; color: #cd5601;">
+    <div class="header">
+        <h1 class="welcome" style="text-decoration: underline; margin-right: 900px;">Welcome {{request.session.user_name}}!</h1>
+        <a href="/" style="color: #cd5601; font-size: 20px;">Back Home</a>
+        <a href="/logout" style="margin-left: 20px; color: #cd5601; font-size: 20px;">Logout</a>
+    </div>
+    <h1 style="margin-left: 400px;">Welcome to our Full Tutorials section!</h1>
+    <p style="font-size: 20px; width: 800px; margin-left: 300px; text-align: justify;">Thank you so much {{request.session.user_name}} for joining us! We are glad that you are trusting in us for your improvement goals. Here you can find advanced, competitive and high performance tutorials, we hope they are a great tool for your improvement, you can always visit our <a href="/forum" style="color: turquoise; text-decoration: underline; font-weight: bold;">Forum</a> to ask any questions, our <a href="/virtual" style="color: turquoise; text-decoration: underline; font-weight: bold;">Virtual Coaching</a> to send your own video to be analized and/or <a href="/contact" style="color: turquoise; text-decoration: underline; font-weight: bold;">Contact Us</a> directly for any questions you might have.</p>
+    <br>
+    <div class="zoe">
+        <h1 style="margin-left: 70px;">Technical analysis for Zoe's forehand</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'zoe.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="sydney">
+        <h1 style="margin-left: 70px;">Technical analysis for Sydney's Serve</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'sydney.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="veorah">
+        <h1 style="margin-left: 50px;">Technical analysis for Veorah's forehand</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'veorah.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="priscilla">
+        <h1 style="margin-left: 40px;">Technical analysis for Priscilla's backhand</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'priscilla.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="claire">
+        <h1 style="margin-left: 60px;">Technical analysis for Claire's serve</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'claire.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="ashley">
+        <h1 style="margin-left: 60px;">Technical analysis for Ashley's serve</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'ashley.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+</body>
+</html>

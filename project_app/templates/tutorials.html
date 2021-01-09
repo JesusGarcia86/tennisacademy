@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Coaching</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style_2.css' %}">
+</head>
+<body style="background-color: black; color: #cd5601;">
+    <a href="/" style="color: #cd5601; font-size: 20px;">Back Home</a>
+    <h1 style="margin-left: 400px;">Welcome to our Basic Tutorial section!</h1>
+    <p style="font-size: 20px; width: 800px; margin-left: 300px; text-align: justify;">Hello everybody,
+    <br>In this section you can find tutorials to improve your tennis like the different grips, how to use them and what are they good for, different types of stances in tennis and their differences, etc. In this page the content will be basic, if you are looking for advance, competitive or high performance tutorials and tip, please <a href="/logreg" style="color: turquoise; text-decoration: underline; font-weight: bold;">Register or Log in.</a>
+    <br></p>
+    <div class="veorah">
+        <h1 style="margin-left: 50px;">Technical analysis for Veorah's forehand</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'veorah.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="priscilla">
+        <h1 style="margin-left: 40px;">Technical analysis for Priscilla's backhand</h1>
+        <video width='600' height= '300' controls style="margin-left: 30px;">
+        <source src="{% static 'priscilla.mp4' type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+</body>
+</html>

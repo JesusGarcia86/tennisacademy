@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Performance Tennis Academy USA</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="background-color: black;">
+    <a href="/logreg" style="background-color: black; display: block; color: #cd5601; text-align: right; font-size: 20px; padding: 5px;">Register/Log in</a>
+    <div class="container">
+        <img src="{% static 'elitelogo.jpg' %}"/>
+        <marquee><dfn style="color: #cd5601; font-size: 30px; font-weight: bold;">Welcome to Elite Performance Tennis Academy USA Official Website!</dfn></marquee>
+        <div class="topnav">
+            <a class="active" href="/" style="margin-left: 100px;">Home <span>|</span></a>
+            <a href="/about">About<span>|</span></a>
+            <a href="/coach">Coach<span>|</span></a>
+            <a href="/tutorials">Tutorials<span>|</span></a>
+            <a href="/virtual">Virtual Coaching<span>|</span></a>
+            <a href="/forum">Forum<span>|</span></a>
+            <a href="/contact">Contact Us</a>
+        </div>
+        <div class="main">
+            <video width='800' height= '400' controls autoplay style="border: 3px solid #cd5601;">
+            <source src="{% static 'laura.mp4' type='video/mp4' %}">
+            Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="fa">
+            <ul>
+                <li><a href="https://www.facebook.com/Elite-Performance-Tennis-Academy-USA-100408201355417" style="margin-left: 15px; margin-top: -8px;"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/eliteperformancetennisacademy/" style="margin-left: 12px; margin-top: -8px;"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UC9fGMAaX7SSrRnsjEC5QrTw" style="margin-left: 12px; margin-top: -8px;"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

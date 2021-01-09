@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style4.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+</head>
+<body style="background-color: black; color: #cd5601;">
+    <a href="/" style="color: #cd5601; font-size: 20px; padding: 20px; margin-top: 30px;">Back Home</a>
+    <h1 style="margin-left: 450px; font-size: 20px; margin-top: 300px;">Thank you for your purchase! Please upload your video below</h1>
+    <br>
+    <div class="card">
+      <img style="width: 200px;" src="{% static 'elitelogo.jpg' %}" id="img-preview"/>
+      <label class="file-upload-container" for="file-upload">
+        <input id="file-upload" type="file" style="display:none;">
+        Select an Image
+      </label>
+    </div>
+    <div id="success"></div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{% static 'upload.js' %}"></script>
+</body>
+</html>

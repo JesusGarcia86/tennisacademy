@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style_3.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body style="background-color: black; color: #cd5601;;">
+    <div class="wrap">
+        <div class="header">
+            <h1 class="welcome" style="text-decoration: underline;">Welcome {{request.session.user_name}}!</h1>
+            <a href="/" style="color: #cd5601; font-size: 20px;">Back Home</a>
+            <a href="/logout" style="margin-left: 20px; color: #cd5601; font-size: 20px;">Logout</a>
+        </div>
+        <div class="main_content" style="margin-left: 150px; background-color: black;">
+            <div class="form-box" style="background-color: black;">
+                <h2 class="quotes" style="text-decoration: underline;">Posts</h2>
+                <!-- Display Messages -->
+                {% for message in all_messages %}
+                <div style="border: 5px solid #cd5601; margin-bottom: 10px; font-size: 20px; width: 350px;">
+                    <!-- Message Content -->
+                    <p style="color: aquamarine;">{{ message.content }}</p>
+                    <!-- Poster -->
+                    <p>Posted By: <a href="/user/{{message.poster.id}}"
+                            style="color: aquamarine;">{{message.poster.first_name}} {{message.poster.last_name}}</a>
+                    </p>
+                    <!-- Likes -->
+                    <a href="/like/{{message.id}}"><img src="{% static 'like2.svg' %}"
+                            style="width: 50px; display: inline-block; margin-left: 20px;" /></a>
+                    <p
+                        style="display: inline-block; margin-left: 10px; margin-top: 0px; color: aquamarine; text-decoration: underline;">
+                        {{ message.user_likes.count }}
+                    </p>
+                    <!-- Delete message if poster user -->
+                    {% if message.poster.id == request.session.user_id %}
+                    <a class="del" href="/delete/{{message.id}}"
+                        style="color: aquamarine; display: block; margin-left: 20px;">Delete</a>
+                    {% endif %}
+                    <!-- Comment section starts -->
+                    {% for comment in message.comments.all %}
+                    <div class="comments" style="border: 3px solid #cd5601; width: 300px; margin-left: 22px;">
+                        <p>Comment by: <span style="color: aquamarine; text-decoration: underline;">{{comment.poster.first_name}} {{comment.poster.last_name}}</p>
+                        <p style="color: aquamarine;">{{comment.content}}</p>
+                        <!-- Delete Comments -->
+                        {% if comment.poster.id == request.session.user_id %}
+                        <a href="/comm_delete/{{comment.id}}" style="color: aquamarine; margin-left: 20px;">Delete
+                            Comment</a>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                    <!-- Comment Form -->
+                    <p>Comment:</p>
+                    <form action="/create_comment" method=POST>
+                        {% csrf_token %}
+                        <textarea name="contents" cols="20" rows="5"></textarea>
+                        <input type="hidden" name="message" value="{{message.id}}">
+                        <input type="submit" value="Post">
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- Create Post Section -->
+            <div class='form-box' style="background-color: black;">
+                <form action="/create_message" method=POST>
+                    {% csrf_token %}
+                    {% if messages %}
+                    <div id='errors'>
+                        {% for message in messages %}
+                        <p>- {{message}} -</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <h2 class="add" style="margin-left: -20px; text-decoration: underline;">Add a Post!:</h2>
+                    <h3 class="author">Name</h3>
+                    <input type="text" placeholder="Your Name Here">
+                    <h3>Post</h3>
+                    <textarea name="contents" cols="50" rows="10" placeholder="Your Post Here"></textarea>
+                    <input type="submit" class="sub" value="Post" style="width: 50px;">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
